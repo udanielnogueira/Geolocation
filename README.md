@@ -1,3 +1,4 @@
-# Geolocation
+# geolocation-html
 
- Using HTML Geolocation API.
+ Using HTML Geolocation API.]
+ 
