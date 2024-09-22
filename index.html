@@ -1,32 +1,34 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Geolocation</title>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Geolocation</title>
+  </head>
 
-<body>
-  <p>Clique no botão para receber as coordenadas.</p>
+  <body>
+    <p>Clique no botão para receber as coordenadas.</p>
+    <button onclick="getLocation()">Coordenadas</button>
+    <p id="result"></p>
 
-  <button onclick="getLocation()">Coordenadas</button>
+    <script>
+      var x = document.getElementById("result");
 
-  <p id="result"></p>
-
-  <script>
-    var x = document.getElementById("result");
-
-    function getLocation() {
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-      } else {
-        x.innerHTML = "Geolocation não é suportado nesse navegador.";
+      function getLocation() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+          x.innerHTML = "Geolocation não é suportado nesse navegador.";
+        }
       }
-    }
 
-    function showPosition(position) {
-      x.innerHTML = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
-    }
-  </script>
-</body>
+      function showPosition(position) {
+        x.innerHTML =
+          "Latitude: " +
+          position.coords.latitude +
+          "<br>Longitude: " +
+          position.coords.longitude;
+      }
+    </script>
+  </body>
 </html>
